@@ -121,3 +121,56 @@ def get_recipient_attribute_cat_version(df,remove_unused_id = True):  # making t
     recipient = recipient.drop_duplicates(subset=['id'])
     
     return recipient
+
+def get_service_attribute(df):
+    service = df.groupby(['service']).agg(
+        total_usage = ('id', 'count'),
+        num_recipient = ('id', 'nunique'), 
+        distinct_month = ('month', 'nunique')
+    ).reset_index()
+    service['avg_monthly_recipient'] = service['total_usage']/service['distinct_month'] 
+    return service
+
+def get_service_attribute_v2(df):
+    """
+    Christian's version of computing monthly average, 
+    my revised variable names following my convention of using singula for variable names.
+    """
+    sorted_data = df.groupby(['service', 'DATE_OF_EVENT'])['MCI_UNIQ_ID'].nunique().reset_index()
+    service_attribute = sorted_data.groupby('service').agg({
+        'MCI_UNIQ_ID': ['sum', 'mean']
+    })
+    service_attribute.columns = ['total_recipients', 'avg_monthly_recipients']
+    return service_attribute
+
+def get_retention_cohort(df):
+    """
+    - @author Ying Li
+    - input: transaction dataframe, DHS service usage dataframe
+    - output: a dataframe representing a retention cohort
+    - preconditions: at monthly level because the DHS data is at month level    
+    """
+    recipient = df.groupby(['id']).agg(
+        first_date = ('date', 'min'), 
+    ).reset_index()
+    df_retention = pd.merge(df, recipient, on = 'id', how = 'left')
+    df_retention['elapsed'] = df_retention['date'].dt.month - df_retention['first_date'].dt.month
+    df_retention_count = df_retention.groupby(["first_date", "elapsed"]).agg(
+        num_active = ("id", "nunique"),
+    ).reset_index()
+    df_retention_count = df_retention_count.pivot(index = "first_date", columns="elapsed", values='num_active')
+    df_retention_ratio = df_retention_count.reset_index()
+    df_retention_ratio = df_retention_count.div(df_retention_ratio.iloc[:,1].to_numpy(),axis = 0)
+    
+    return df_retention_count, df_retention_ratio
+
+def get_id_service_matrix(df):
+    df_temp = df.groupby(["id","serv"]).agg(
+        num_serv = ('service', 'nunique') # this will be 1 or 0, "service" is categorical 
+    ).reset_index()
+    df_serv = df_temp.pivot_table(
+        values='num_serv', index=["id"],
+        columns="serv", aggfunc=np.sum
+    ).reset_index()
+    return df_serv
+
