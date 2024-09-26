@@ -165,12 +165,11 @@ def get_retention_cohort(df):
     return df_retention_count, df_retention_ratio
 
 def get_id_service_matrix(df):
-    df_temp = df.groupby(["id","serv"]).agg(
+    df_temp = df.groupby(["id","serv"],observed=False).agg(
         num_serv = ('service', 'nunique') # this will be 1 or 0, "service" is categorical 
     ).reset_index()
-    df_serv = df_temp.pivot_table(
+    df_serv = df_temp.pivot_table(observed=False,
         values='num_serv', index=["id"],
-        columns="serv", aggfunc=np.sum
+        columns="serv", aggfunc="sum"
     ).reset_index()
     return df_serv
-
