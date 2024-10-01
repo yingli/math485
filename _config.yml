@@ -1,7 +1,9 @@
-theme: jekyll-theme-minimal
+---
+layout: post
 theme: jekyll-theme-minimal
 title: Ying Li <anything you like, without this, the repo name will be the title>
 description: demonstrating portfolio through my sample code repo
+---
 
 lsi: false
 safe: true
