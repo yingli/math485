@@ -10,3 +10,6 @@ Sample notebooks are:
 [take a look at the html generated from the notebook](https://github.com/yingli/math485/blob/main/sample_code/tabular_data/tabular_data_06.html)
 
 [you can also read the pdf file made from the sample code for lecture 6](tabular_data_06.pdf)
+
+[you can also read the html file made from the sample code for lecture 6](tabular_data_06.html)
+
