@@ -1,4 +1,8 @@
 theme: jekyll-theme-minimal
+theme: jekyll-theme-minimal
+title: Ying Li <anything you like>
+description: portfolio of my work
+
 lsi: false
 safe: true
 source: [your repo's top level directory]
