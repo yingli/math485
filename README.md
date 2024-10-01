@@ -7,7 +7,7 @@ Sample notebooks are:
 
 [download my jupyter notebook for lecture 6](sample_code/tabular_data/tabular_data_06.ipynb)
 
-[take a look at the html generated from the notebook](https://github.com/yingli/math485/blob/main/sample_code/tabular_data/tabular_data_06.html)
+[take a look at the html generated from the notebook](sample_code/tabular_data/tabular_data_06.html)
 
 [you can also read the pdf file made from the sample code for lecture 6](tabular_data_06.pdf)
 
