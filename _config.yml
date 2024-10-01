@@ -1,7 +1,7 @@
 theme: jekyll-theme-minimal
 theme: jekyll-theme-minimal
-title: Ying Li <anything you like>
-description: portfolio of my work
+title: Ying Li <anything you like, without this, the repo name will be the title>
+description: demonstrating portfolio through my sample code repo
 
 lsi: false
 safe: true
