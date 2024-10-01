@@ -6,7 +6,9 @@ permalink: /sample_code
 
 Sample notebooks goes here
 
-[notebook for lecture 6](https://github.com/yingli/math485/blob/main/tabular_data_06.pdf)
+[jupyter notebook for lecture 6](sample_code/tabular_data/tabular_data_06.ipynb)
+
+#https://github.com/yingli/math485/blob/main/tabular_data_06.pdf)
 
 [you can check out the notebook for lecture 6](tabular_data_06.pdf)
 
