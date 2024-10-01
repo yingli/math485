@@ -1,0 +1,17 @@
+---
+layout: post
+theme: jekyll-theme-minimal
+title: Ying Li <anything you like, without this, the repo name will be the title>
+description: demonstrating portfolio through my sample code repo
+---
+
+lsi: false
+safe: true
+source: [your repo's top level directory]
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
