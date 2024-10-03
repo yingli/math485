@@ -3,6 +3,8 @@
 * this repo contains the sample notebooks for my teaching of "Topics in Data Science", Math 485, Fall 2024, at Wheaton College.
 
 
+
+
 Sample notebooks are:
 
 [download my jupyter notebook for lecture 6](sample_code/tabular_data/tabular_data_06.ipynb)
