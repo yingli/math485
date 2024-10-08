@@ -7,7 +7,7 @@ description: demonstrating portfolio through my sample code repo
 
 lsi: false
 safe: true
-source: [your repo's top level directory]
+source: https://github.com/yingli/math485/tree/main
 incremental: false
 highlighter: rouge
 gist:
