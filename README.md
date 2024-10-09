@@ -3,7 +3,7 @@
 * this repo contains the sample notebooks for my teaching of "Topics in Data Science", Math 485, Fall 2024, at Wheaton College.
 
 
-[we created a map to show Alison's movement](https://github.com/yingli/math485/blob/main/Alison_movement.html)
+[we created a map to show Alison's movement](Alison_movement.html)
 
 Sample notebooks are:
 
